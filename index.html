@@ -14,7 +14,11 @@
     to it and its childern -->
     <div id="vueCDN">
         <h1>{{ heading }}</h1>
-        <div class="center">
+        <div class="navbar">
+            <a href="#" @click="toggleCounterComponent" v-if="CounterComponent"><b>Counter app</b></a>
+            <a href="#" @click="toggleCounterComponent" v-if="!CounterComponent">Counter app</a>
+        </div>
+        <div v-if="CounterComponent" class="center">
             <h3>Counter</h3>
             <h2>{{countValue}}</h2>
             <!-- @click same as v-on:click -->

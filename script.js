@@ -3,7 +3,13 @@ const vueCDN = Vue.createApp({ //Vue.createApp is a method
     data(){
         return {
             heading: 'VUE CDN DEMO',
+            CounterComponent: false,
             countValue: 0
+        }
+    },
+    methods: {
+        toggleCounterComponent(){
+            this.CounterComponent = !this.CounterComponent
         }
     }
 })

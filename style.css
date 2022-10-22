@@ -6,7 +6,13 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
-
+.navbar{
+    text-align: center;
+}
 h1, h2, h3{
     text-align: center;
 }
+
+a {
+    text-decoration: none;
+  }
