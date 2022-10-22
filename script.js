@@ -4,12 +4,24 @@ const vueCDN = Vue.createApp({ //Vue.createApp is a method
         return {
             heading: 'VUE CDN DEMO',
             CounterComponent: false,
-            countValue: 0
+            BlogComponent: false,
+            countValue: 0,
+            blog:'',
+            blogs:[],
         }
     },
     methods: {
-        toggleCounterComponent(){
-            this.CounterComponent = !this.CounterComponent
+        toggleX(){
+            this.CounterComponent = !this.CounterComponent;        
+            this.BlogComponent =  false;
+        },
+        toggleY(){
+            this.BlogComponent = !this.BlogComponent;        
+            this.CounterComponent =  false;
+        },
+        storeBlogs(){
+            this.blogs.push(this.blog);
+            e.preventDefault();
         }
     }
 })

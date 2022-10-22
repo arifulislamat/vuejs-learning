@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1:1">
     <title>Vue CDN</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -15,8 +15,10 @@
     <div id="vueCDN">
         <h1>{{ heading }}</h1>
         <div class="navbar">
-            <a href="#" @click="toggleCounterComponent" v-if="CounterComponent"><b>Counter app</b></a>
-            <a href="#" @click="toggleCounterComponent" v-if="!CounterComponent">Counter app</a>
+            <a href="#" @click="toggleX" v-if="CounterComponent"><b>Counter app</b></a>
+            <a href="#" @click="toggleX" v-if="!CounterComponent">Counter app</a>
+            <a href="#" @click="toggleY" v-if="BlogComponent"><b>Blog app</b></a>
+            <a href="#" @click="toggleY" v-if="!BlogComponent">Blog app</a>
         </div>
         <div v-if="CounterComponent" class="center">
             <h3>Counter</h3>
@@ -24,7 +26,27 @@
             <!-- @click same as v-on:click -->
             <button @click="countValue++">Addition</button>
             <button @click="countValue--">Subtract</button>
-        </div>    
+        </div> 
+
+        <div v-if="BlogComponent" class="row">
+            <div class="column">
+              <h2>Create a post!</h2>
+              <input type="text" name="" onfocus="this.value=''" placeholder="Start typing..." v-model="blog" id="">
+              <button type="submit" @click="storeBlogs">Submit</button >
+            </div>
+            <div class="column">
+              <h2>Your posts</h2>
+              <!-- Uncomment below code to see the difference -->
+              <!-- <ol>
+                <li v-for="blog in blogs" :key="blog">
+                    {{ blogs }}
+                </li>
+              </ol> -->
+              <div v-for="blog in blogs" :key="blog">
+                <p>{{ blog }}</p>
+              </div>
+            </div>
+          </div>          
     </div>
     <script src="script.js"></script>
 </body>
