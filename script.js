@@ -28,6 +28,7 @@ const vueCDN = Vue.createApp({ //Vue.createApp is a method
 // Mounting the newly created app (vueCDN) into a id of vueCDN (html id).
 vueCDN.mount('#vueCDN')
 
+// checking git issue 
 
 // Console Message 
 info_str = " __ _\n"+
